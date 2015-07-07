@@ -10,8 +10,9 @@ class StringSet(object):
         self.collection.add(strip_string)
 
     def remove(self, string):
-        if string in self.collection:
-            self.collection.remove(string)
+        strip_string = string.strip()
+        if strip_string in self.collection:
+            self.collection.remove(strip_string)
 
     def parse(self, string):
         pass

@@ -87,3 +87,10 @@ class MiscRemoveTest(MiscTest):
         self.string_set.remove('nonexistent')
         expected_data = set(['abc', 'cba'])
         self.assertEqual(self.collection, expected_data)
+
+    def test_remove_strip_element(self):
+        ''' Remove method should remove item stripping whitespaces from the''' \
+            '''beggining and the end of string'''
+        self.string_set.remove(' abc ')
+        expected_data = set(['cba'])
+        self.assertEqual(self.collection, expected_data)
