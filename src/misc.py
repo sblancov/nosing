@@ -6,7 +6,8 @@ class StringSet(object):
         self.collection = collection
 
     def add(self, string):
-        self.collection.add(string)
+        strip_string = string.strip()
+        self.collection.add(strip_string)
 
     def remove(self, string):
         if string in self.collection:

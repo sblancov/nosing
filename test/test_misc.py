@@ -56,6 +56,13 @@ class MiscAddTest(MiscTest):
             self.string_set.add(item)
         self.assertEqual(self.collection, expected_data)
 
+    def test_add_nonstrip_element(self):
+        ''' Add method should remove whitespaces from the beginning and the''' \
+            ''' end of string '''
+        expected_data = set([STRING])
+        self.string_set.add(' {} '.format(STRING))
+        self.assertEqual(self.collection, expected_data)
+
 
 class MiscRemoveTest(MiscTest):
 
