@@ -35,9 +35,17 @@ class MiscConstructorTest(unittest.TestCase):
 
 class MiscAddTest(MiscTest):
 
-    def test_add_ok(self):
+    def test_add_an_element(self):
         ''' Add method should add an element to collection '''
         input_data = 'abc'
         expected_data = set(['abc'])
         self.string_set.add(input_data)
+        self.assertEqual(self.collection, expected_data)
+
+    def test_add_no_repeated_element(self):
+        ''' Add method should not add reapeted elements '''
+        input_data = ['abc', 'abc', 'cba']
+        expected_data = set(['abc', 'cba'])
+        for item in input_data:
+            self.string_set.add(item)
         self.assertEqual(self.collection, expected_data)
