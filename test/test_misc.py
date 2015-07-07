@@ -35,6 +35,11 @@ class MiscConstructorTest(unittest.TestCase):
 
 class MiscAddTest(MiscTest):
 
+    def test_add_no_parameter(self):
+        ''' Add method should raise TypeError when no parameters are passed '''
+        with self.assertRaises(TypeError):
+            self.string_set.add()
+
     def test_add_an_element(self):
         ''' Add method should add an element to collection '''
         input_data = 'abc'
