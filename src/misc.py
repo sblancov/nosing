@@ -1,10 +1,10 @@
 class StringSet(object):
 
     def __init__(self, collection):
-        pass
+        self.collection = collection
 
     def add(self, string):
-        pass
+        self.collection.add(string)
 
     def remove(self, string):
         pass
