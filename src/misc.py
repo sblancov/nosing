@@ -9,7 +9,8 @@ class StringSet(object):
         self.collection.add(string)
 
     def remove(self, string):
-        pass
+        if string in self.collection:
+            self.collection.remove(string)
 
     def parse(self, string):
         pass

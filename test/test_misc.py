@@ -2,6 +2,9 @@ import unittest
 
 from misc import StringSet
 
+STRING = 'abc'
+STRING_LIST = ['abc', 'abc', 'cba']
+
 
 class MiscTest(unittest.TestCase):
 
@@ -42,15 +45,38 @@ class MiscAddTest(MiscTest):
 
     def test_add_an_element(self):
         ''' Add method should add an element to collection '''
-        input_data = 'abc'
-        expected_data = set(['abc'])
-        self.string_set.add(input_data)
+        expected_data = set([STRING])
+        self.string_set.add(STRING)
         self.assertEqual(self.collection, expected_data)
 
     def test_add_no_repeated_element(self):
         ''' Add method should not add reapeted elements '''
-        input_data = ['abc', 'abc', 'cba']
         expected_data = set(['abc', 'cba'])
-        for item in input_data:
+        for item in STRING_LIST:
             self.string_set.add(item)
+        self.assertEqual(self.collection, expected_data)
+
+
+class MiscRemoveTest(MiscTest):
+
+    def setUp(self):
+        super(MiscRemoveTest, self).setUp()
+        for item in STRING_LIST:
+            self.string_set.add(item)
+
+    def test_remove_no_parameter(self):
+        ''' Remove method should raise TypeError when no parameter is passed'''
+        with self.assertRaises(TypeError):
+            self.string_set.remove()
+
+    def test_remove_existent_element(self):
+        ''' Remove method should remove an added element '''
+        self.string_set.remove(STRING)
+        expected_data = set(['cba'])
+        self.assertEqual(self.collection, expected_data)
+
+    def test_remove_nonexistent_element(self):
+        ''' Remove method should not remove a nonexistent element '''
+        self.string_set.remove('nonexistent')
+        expected_data = set(['abc', 'cba'])
         self.assertEqual(self.collection, expected_data)
