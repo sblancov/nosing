@@ -1,6 +1,8 @@
 class StringSet(object):
 
     def __init__(self, collection):
+        if not isinstance(collection, set):
+            raise TypeError("collection parameter should be a set instance")
         self.collection = collection
 
     def add(self, string):

@@ -26,6 +26,12 @@ class MiscConstructorTest(unittest.TestCase):
         string_set = StringSet(collection)
         self.assertIsInstance(string_set, StringSet)
 
+    def test_constructor_param_is_set(self):
+        ''' Constructor should receive a set object as parameter '''
+        collection = []
+        with self.assertRaises(TypeError):
+            StringSet(collection)
+
 
 class MiscAddTest(MiscTest):
 
