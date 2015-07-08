@@ -6,8 +6,7 @@ class StringSet(object):
         self.collection = collection
 
     def add(self, string):
-        strip_string = string.strip()
-        self.collection.add(strip_string)
+        self.__add_strip_string(string)
 
     def remove(self, string):
         strip_string = string.strip()
@@ -15,7 +14,9 @@ class StringSet(object):
             self.collection.remove(strip_string)
 
     def parse(self, string):
-        pass
+        split_string = string.split(',')
+        for item in split_string:
+            self.__add_strip_string(item)
 
     def clean(self):
         pass
@@ -28,3 +29,7 @@ class StringSet(object):
 
     def __str__(self):
         pass
+
+    def __add_strip_string(self, string):
+        strip_string = string.strip()
+        self.collection.add(strip_string)

@@ -94,3 +94,12 @@ class StringSetRemoveTest(StringSetTest):
         self.string_set.remove(' abc ')
         expected_data = set(['cba'])
         self.assertEqual(self.collection, expected_data)
+
+
+class StringSetParseTest(StringSetTest):
+
+    def test_parse_elements(self):
+        ''' Parse method should parse a list of strings separated by commas '''
+        self.string_set.parse('abc, cba, abc')
+        expected_data = set(['abc', 'cba'])
+        self.assertEqual(self.collection, expected_data)
