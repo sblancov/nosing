@@ -6,7 +6,7 @@ STRING = 'abc'
 STRING_LIST = ['abc', 'abc', 'cba']
 
 
-class MiscTest(unittest.TestCase):
+class StringSetTest(unittest.TestCase):
 
     def setUp(self):
         self.collection = set()
@@ -16,7 +16,7 @@ class MiscTest(unittest.TestCase):
         del self.string_set
 
 
-class MiscConstructorTest(unittest.TestCase):
+class StringSetConstructorTest(unittest.TestCase):
 
     def test_constructor_fail(self):
         ''' Constructor should raise an exception when no parameters '''
@@ -36,7 +36,7 @@ class MiscConstructorTest(unittest.TestCase):
             StringSet(collection)
 
 
-class MiscAddTest(MiscTest):
+class StringSetAddTest(StringSetTest):
 
     def test_add_no_parameter(self):
         ''' Add method should raise TypeError when no parameters are passed '''
@@ -64,10 +64,10 @@ class MiscAddTest(MiscTest):
         self.assertEqual(self.collection, expected_data)
 
 
-class MiscRemoveTest(MiscTest):
+class StringSetRemoveTest(StringSetTest):
 
     def setUp(self):
-        super(MiscRemoveTest, self).setUp()
+        super(StringSetRemoveTest, self).setUp()
         for item in STRING_LIST:
             self.string_set.add(item)
 
