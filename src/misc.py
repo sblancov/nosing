@@ -19,7 +19,7 @@ class StringSet(object):
             self.__add_strip_string(item)
 
     def clean(self):
-        pass
+        self.collection.clear()
 
     def __iter__(self):
         pass

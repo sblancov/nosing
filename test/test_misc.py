@@ -103,3 +103,20 @@ class StringSetParseTest(StringSetTest):
         self.string_set.parse('abc, cba, abc')
         expected_data = set(['abc', 'cba'])
         self.assertEqual(self.collection, expected_data)
+
+
+class StringSetCleanTest(StringSetTest):
+
+    def test_clean_elements(self):
+        ''' Clean method should empty StringSet instance '''
+        for item in STRING_LIST:
+            self.string_set.add(item)
+        self.string_set.clean()
+        expected_data = set()
+        self.assertEqual(self.collection, expected_data)
+
+    def test_clean_void(self):
+        ''' Clean method should do nothing when StringSet is empty '''
+        self.string_set.clean()
+        expected_data = set()
+        self.assertEqual(self.collection, expected_data)
