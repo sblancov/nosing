@@ -24,8 +24,8 @@ class StringSet(object):
     def __iter__(self):
         pass
 
-    def __contains__(self):
-        pass
+    def __contains__(self, item):
+        return item in self.collection
 
     def __str__(self):
         pass

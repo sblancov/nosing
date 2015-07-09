@@ -120,3 +120,19 @@ class StringSetCleanTest(StringSetTest):
         self.string_set.clean()
         expected_data = set()
         self.assertEqual(self.collection, expected_data)
+
+
+class StringSetContainsTest(StringSetTest):
+
+    def setUp(self):
+        super(StringSetContainsTest, self).setUp()
+
+    def test_contains_true(self):
+        expected_data = 'abc'
+        self.assertFalse(expected_data in self.string_set)
+        for item in STRING_LIST:
+            self.string_set.add(item)
+        self.assertTrue(expected_data in self.string_set)
+
+    def test_contains_false(self):
+        self.assertFalse('def' in self.string_set)
