@@ -137,6 +137,15 @@ class StringSetContainsTest(StringSetTest):
             '''present '''
         self.assertFalse('def' in self.string_set)
 
+    def test_contains_whitespaces_string(self):
+        ''' __contains__ method should return True when a strip string is ''' \
+            '''present '''
+        expected_data = ' abc '
+        self.assertFalse(expected_data in self.string_set)
+        for item in STRING_LIST:
+            self.string_set.add(item)
+        self.assertTrue(expected_data in self.string_set)
+
 
 class StringSetUnicode(StringSetTest):
 
