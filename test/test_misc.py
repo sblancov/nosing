@@ -125,6 +125,7 @@ class StringSetCleanTest(StringSetTest):
 class StringSetContainsTest(StringSetTest):
 
     def test_contains_true(self):
+        ''' __contains__ method should return True when a string is present '''
         expected_data = 'abc'
         self.assertFalse(expected_data in self.string_set)
         for item in STRING_LIST:
@@ -132,13 +133,16 @@ class StringSetContainsTest(StringSetTest):
         self.assertTrue(expected_data in self.string_set)
 
     def test_contains_false(self):
+        ''' __contains__ method should return False when a string is not ''' \
+            '''present '''
         self.assertFalse('def' in self.string_set)
 
 
 class StringSetUnicode(StringSetTest):
 
     def test_unicode(self):
-        ''' __unicode__ method should return a list of comma separated string '''
+        ''' __unicode__ method should return a list of comma separated ''' \
+            '''string '''
         for item in STRING_LIST:
             self.string_set.add(item)
         expected_data = 'abc, cba'
