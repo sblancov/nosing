@@ -136,3 +136,13 @@ class StringSetContainsTest(StringSetTest):
 
     def test_contains_false(self):
         self.assertFalse('def' in self.string_set)
+
+
+class StringSetUnicode(StringSetTest):
+
+    def test_unicode(self):
+        ''' __unicode__ method should return a list of comma separated string '''
+        for item in STRING_LIST:
+            self.string_set.add(item)
+        expected_data = 'abc, cba'
+        self.assertEqual(expected_data, unicode(self.string_set))

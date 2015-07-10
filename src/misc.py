@@ -27,8 +27,8 @@ class StringSet(object):
     def __contains__(self, item):
         return item in self.collection
 
-    def __str__(self):
-        pass
+    def __unicode__(self):
+        return unicode(', '.join(sorted(self.collection)))
 
     def __add_strip_string(self, string):
         strip_string = string.strip()
