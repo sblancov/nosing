@@ -124,9 +124,6 @@ class StringSetCleanTest(StringSetTest):
 
 class StringSetContainsTest(StringSetTest):
 
-    def setUp(self):
-        super(StringSetContainsTest, self).setUp()
-
     def test_contains_true(self):
         expected_data = 'abc'
         self.assertFalse(expected_data in self.string_set)
