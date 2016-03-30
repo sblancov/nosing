@@ -156,3 +156,16 @@ class StringSetUnicode(StringSetTest):
             self.string_set.add(item)
         expected_data = 'abc, cba'
         self.assertEqual(expected_data, unicode(self.string_set))
+
+
+class StringSetIter(StringSetTest):
+
+    def test_iter(self):
+        ''' __iter__ method should return an item when loop '''
+
+        for item in STRING_LIST:
+            self.string_set.add(item)
+        expected_data = 'cba'
+        for i in self.string_set:
+            result = i
+        self.assertEqual(expected_data, result)

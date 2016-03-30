@@ -36,7 +36,8 @@ class StringSet(object):
         self.collection.clear()
 
     def __iter__(self):
-        pass
+        for item in self.collection:
+            yield item
 
     def __contains__(self, item):
         strip_string = item.strip()
