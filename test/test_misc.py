@@ -166,7 +166,5 @@ class StringSetIter(StringSetTest):
 
         for item in STRING_LIST:
             self.string_set.add(item)
-        expected_data = 'cba'
-        for i in self.string_set:
-            result = i
-        self.assertEqual(expected_data, result)
+        for result in self.string_set:
+            self.assertIn(result, STRING_LIST)
