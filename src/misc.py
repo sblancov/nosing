@@ -1,3 +1,6 @@
+from __future__ import unicode_literals
+
+
 class StringSet(object):
     ''' This class allows to parse a list of comma separated strings '''
 
@@ -43,8 +46,8 @@ class StringSet(object):
         strip_string = item.strip()
         return strip_string in self.collection
 
-    def __unicode__(self):
-        return unicode(', '.join(sorted(self.collection)))
+    def __str__(self):
+        return str(', '.join(sorted(self.collection)))
 
     def __add_strip_string(self, string):
         strip_string = string.strip()

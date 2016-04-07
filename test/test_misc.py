@@ -149,13 +149,13 @@ class StringSetContainsTest(StringSetTest):
 
 class StringSetUnicode(StringSetTest):
 
-    def test_unicode(self):
-        ''' __unicode__ method should return a list of comma separated ''' \
+    def test_str(self):
+        ''' __str__ method should return a list of comma separated ''' \
             '''string '''
         for item in STRING_LIST:
             self.string_set.add(item)
         expected_data = 'abc, cba'
-        self.assertEqual(expected_data, unicode(self.string_set))
+        self.assertEqual(expected_data, str(self.string_set))
 
 
 class StringSetIter(StringSetTest):
